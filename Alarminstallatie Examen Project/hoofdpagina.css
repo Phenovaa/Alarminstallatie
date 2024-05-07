@@ -1,0 +1,168 @@
+/* Reset Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Root Variables */
+:root {
+  --primair-achtergrond-kleur: #ffff;
+  --secundair-achtergrond-kleur: #0052b4;
+  --tertiar-achtergrond-kleur: #215387;
+  --quartair-achtergrond-kleur: #201c1c;
+}
+
+/* Body and HTML Styles */
+html {
+  background-size: 25%;
+}
+
+body {
+  font-family: "Permanent Marker";
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  margin: 15px;
+}
+
+.button-design {
+  cursor: pointer;
+  font-family: "Permanent Marker";
+  font-size: 16px;
+  font-weight: bold;
+  width: 130px;
+  height: 60px;
+  border-radius: 16px;
+  background-color: var(--secundair-achtergrond-kleur);
+  box-shadow: 10px 5px 5px #0052B4;
+}
+
+.button-design:hover {
+  background-color: var(--secundair-achtergrond-kleur);
+  box-shadow: 1px 1px 10px 1px var(--tertiar-achtergrond-kleur);
+}
+
+/* Navbar Styles */
+.navbar,
+.navbar-2 {
+  margin-right: 30px;
+  align-items: center;
+}
+
+/* Main Content Styles */
+main {
+  text-align: center;
+}
+
+/* Samenvatting Container Styles */
+.samenvatting {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+
+.titel-1,
+.titel-2,
+.titel-3 {
+  flex: 1;
+  margin: 30px;
+  margin-top: -120px;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 300px;
+  overflow: hidden;
+  background-color: var(--secundair-achtergrond-kleur); /* Add this line */
+}
+
+.titel-1 h2,
+.titel-2 h2,
+.titel-3 h2,
+.titel-1 p,
+.titel-2 p,
+.titel-3 p {
+  margin: 6px;
+  font-size: 16px;
+}
+
+/* Foto Pagina Styles */
+.foto-pagina {
+  background-color: var(--primair-achtergrond-kleur);
+  margin-left: auto; 
+  margin-right: auto; 
+  margin-bottom: 30px;
+  max-width: 100%; 
+  height: 400px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+}
+
+.alarm-foto {
+  width: 100%;
+  height: 100%; 
+  object-fit: cover;
+}
+
+
+/* Samenvatting Klacht Styles */
+.samenvatting-overons {
+  background-color: var(--secundair-achtergrond-kleur);
+  padding: 20px;
+  margin: 0px;
+}
+
+.samenvatting-overons h2,
+.samenvatting-overons p {
+  text-align: center;
+  margin: 10px 0;
+  box-sizing: border-box;
+  font-family: "Permanent Marker";
+}
+
+/* Footer Styles */
+footer {
+  background-color: var(--secundair-achtergrond-kleur);
+  margin-top: 30px;
+  height: 30px;
+  box-sizing: border-box;
+  font-family: "Permanent Marker";
+  font-weight: 100px;
+}
+
+/* Responsive Styles */
+@media only screen and (max-width: 1400px) {
+  .samenvatting {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    margin: 30px;
+  }
+
+  .titel-1,
+  .titel-2,
+  .titel-3 {
+    flex: 1;
+    margin: 10px;
+    padding: 15px;
+    max-width: none;
+    height: auto;
+  }
+
+  .titel-1 h2,
+  .titel-2 h2,
+  .titel-3 h2,
+  .titel-1 p,
+  .titel-2 p,
+  .titel-3 p {
+    font-size: 14px;
+  }
+}
