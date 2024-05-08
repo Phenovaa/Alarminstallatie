@@ -1,5 +1,5 @@
 <?php
-// User.php sssss
+// User.php
 
 require_once 'UserDB.php';
 
