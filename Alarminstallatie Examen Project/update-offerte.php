@@ -43,3 +43,4 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $offerteUpdater->updateOfferte($id, $naam, $email, $telefoonnummer, $bedrijfsnaam, $offerte_optie, $bericht, $datum);
 }
 ?>
+
