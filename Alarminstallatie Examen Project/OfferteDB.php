@@ -13,7 +13,7 @@ class OfferteDB {
         // Maak een verbinding met de database
         $this->conn = new mysqli($this->dbHost, $this->dbUser, $this->dbPassword, $this->dbName);
 
-        // Controleer de verbinding
+        // Controleren van de verbinding
         if ($this->conn->connect_error) {
             die("Verbinding met de database is mislukt: " . $this->conn->connect_error);
         }
