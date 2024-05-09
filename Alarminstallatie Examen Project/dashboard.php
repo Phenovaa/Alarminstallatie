@@ -1,18 +1,12 @@
 <?php
-// dashboard.php
-
-// Inclusie van de databaseklasse
 include 'offerteDB.php';
 
-// Maak een instantie van de databaseklasse
 $database = new OfferteDB();
-
 ?>
 
 <?php
   include 'navigatiebar-admin.php';
-  ?>
-
+?>
 
 <!DOCTYPE html>
 <html lang="nl">
@@ -37,7 +31,7 @@ $database = new OfferteDB();
     
 
     <?php
-    // Controleer of er een zoekopdracht is uitgevoerd
+    // Controleren of er een zoekopdracht is uitgevoerd
     if(isset($_GET['id']) && !empty($_GET['id'])) {
         // Haal de ID op uit de URL
         $id = $_GET['id'];
@@ -45,7 +39,7 @@ $database = new OfferteDB();
         // Haal de offerte op basis van de ID
         $offerte = $database->haalOfferteOpBasisVanID($id);
 
-        // Controleer of de offerte is gevonden
+        // Controleren of de offerte is gevonden
         if ($offerte) {
             // Toon de offertegegevens in een aparte div met klasse "zoek-resultaat"
             echo "<div class='zoek-resultaat'>";
@@ -63,9 +57,8 @@ $database = new OfferteDB();
             foreach (explode(",", $offerte['foto']) as $foto) {
                 echo "<img src='{$foto}' alt='Offerte foto'>";
             }
-            echo "</div>"; // Sluit de div met klasse "zoek-resultaat"
+            echo "</div>";
         } else {
-            // Geen offerte gevonden met de opgegeven ID
             echo "<p>Geen offerte gevonden met ID: $id</p>";
         }
     }
@@ -75,7 +68,7 @@ $database = new OfferteDB();
         // Haal alle offertes op
         $offertes = $database->haalAlleOffertesOp();
 
-        // Controleer of er offertes zijn
+        // Controleren of er offertes zijn
         if ($offertes) {
             // Loop door elke offerte en vul de tabel in
             echo "<table>";
@@ -88,9 +81,9 @@ $database = new OfferteDB();
             echo "<th>Offerte-optie</th>";
             echo "<th>Bericht</th>";
             echo "<th>Foto's</th>";
-            echo "<th>Aanvraag Datum</th>"; // Nieuwe kolom voor de datum
-            echo "<th>Bewerk</th>"; // Nieuwe kolom voor bewerken
-            echo "<th>Verwijder</th>"; // Nieuwe kolom voor verwijderen
+            echo "<th>Aanvraag Datum</th>"; 
+            echo "<th>Bewerk</th>"; 
+            echo "<th>Verwijder</th>"; 
             echo "</tr>";
             foreach ($offertes as $offerte) {
                 echo "<tr>";
@@ -107,17 +100,17 @@ $database = new OfferteDB();
                     echo "<img src='{$foto}' alt='Offerte foto'>";
                 }
                 echo "</td>";
-                echo "<td>{$offerte['aanvraag_datum']}</td>"; // Nieuwe kolom voor de datum
-                echo "<td><a href='edit-offerte.php?id={$offerte['id']}'>Bewerk</a></td>"; // Nieuwe kolom voor bewerken
-                echo "<td><a href='delete-offerte.php?id={$offerte['id']}'>Verwijder</a></td>"; // Nieuwe kolom voor verwijderen
+                echo "<td>{$offerte['aanvraag_datum']}</td>"; 
+                echo "<td><a href='edit-offerte.php?id={$offerte['id']}'>Bewerk</a></td>"; 
+                echo "<td><a href='delete-offerte.php?id={$offerte['id']}'>Verwijder</a></td>"; 
                 echo "</tr>";
             }
             echo "</table>";
         } else {
-            // Geen offertes gevonden
             echo "<p>Geen offertes gevonden.</p>";
         }
     }
     ?>
 </body>
 </html>
+
