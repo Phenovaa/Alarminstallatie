@@ -20,7 +20,7 @@
         echo "<p>{$_SESSION['offerte_message']}</p>";
         unset($_SESSION['offerte_message']); // Verwijder het bericht uit de sessie
     }
-    session_write_close(); // Sluit de PHP-sessie
+    session_write_close(); 
     ?>
 
     <form class="offerte-form" action="submit-offerte.php" method="post" enctype="multipart/form-data">
